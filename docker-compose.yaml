@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  jira:
+    image: lowmem0ry/jira
+    container_name: jira
+    ports:
+      - '3080:8080'
+  postgresql:
+    image: postgres
+    container_name: jira_postgres
+    environment:
+      - 'POSTGRES_USER=confluencedb'
+      - 'POSTGRES_PASSWORD=pswd4jira'
+      - 'POSTGRES_DB=wiki'
+      - 'POSTGRES_ENCODING=UTF8'
+      - 'POSTGRES_COLLATE=C'
+      - 'POSTGRES_COLLATE_TYPE=C'
