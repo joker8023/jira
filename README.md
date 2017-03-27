@@ -1,16 +1,20 @@
 # 基于docker 的jira 安装及破解
-1. 安装postgres
-```
-sudo docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=pswd4jira -e POSTGRES_USER=jira -d postgres
-```
-2. 安装jira
+1. 下载docker-compose.yaml文件
 
 ```
-sudo docker run -p 8080:8080 --name jira -d ansi/jira
+wget https://raw.githubusercontent.com/joker8023/jira/master/docker-compose.yaml
 ```
+2. 启动docker-compose
+
+
+```
+sudo docker-compose up -d
+```
+
 3. 破解 jira
 
 [破解文件](http://pan.baidu.com/s/1dEXwA21) 密码：d10q
+
 3.1 进入jira
 ```
 sudo docker exec -it jira /bin/sh
