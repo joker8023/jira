@@ -9,6 +9,8 @@ services:
   postgresql:
     image: postgres
     container_name: jira_postgres
+    ports:
+      - '5433:5432'
     environment:
       - 'POSTGRES_USER=confluencedb'
       - 'POSTGRES_PASSWORD=pswd4jira'
