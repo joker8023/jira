@@ -7,7 +7,7 @@ services:
     ports:
       - '3080:8080'
   postgresql:
-    image: postgres
+    image: postgres:9.6
     container_name: jira_postgres
     ports:
       - '5433:5432'
